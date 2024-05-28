@@ -3,7 +3,7 @@ services:
     image: neo4j:latest
     container_name: neo4j
     environment:
-      - NEO4J_AUTH=none  # Change username and password as needed
+      - NEO4J_AUTH=neo4j/testdemo  # Change username and password as needed
     ports:
       - "7474:7474"
       - "7687:7687"
@@ -46,6 +46,12 @@ services:
     depends_on:
       - neo4j-ollama
       - ollama
+
+  # unstructured:
+  #   image: downloads.unstructured.io/unstructured-io/unstructured:latest
+  #   container_name: unstructured
+  #   ports:
+  #     - "8000:8000"
 
 volumes:
   neo4j_data:
